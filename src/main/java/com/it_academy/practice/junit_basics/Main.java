@@ -1,11 +1,17 @@
 package com.it_academy.practice.junit_basics;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Main program = new Main();
+        program.run(System.in);
 
-        Scanner sc = new Scanner(System.in);
+    }
+
+    public void run(InputStream source) {
+        Scanner sc = new Scanner(source);
 
         int n1 = Integer.parseInt(sc.next());
         int n2 = Integer.parseInt(sc.next());
