@@ -27,7 +27,7 @@ public class Calculator {
     }
 
     public float calculate(char operation) {
-        switch(operation) {
+        switch (operation) {
             default: {
                 return 0;
             }
@@ -38,7 +38,11 @@ public class Calculator {
                 return a + b;
             }
             case '/': {
-                return a / b;
+                try {
+                    return a / b;
+                } catch (ArithmeticException e) {
+                    System.out.println("Division by zero is not allowed");
+                }
             }
             case '*': {
                 return a * b;
@@ -47,7 +51,7 @@ public class Calculator {
                 return (float) Math.pow(a, b);
             }
             case '√': {
-                return (float) Math.pow(a, 1.0/b);
+                return (float) Math.pow(a, 1.0 / b);
             }
         }
     }
