@@ -19,4 +19,11 @@ public class ProgramTest {
         FileInputStream steam = new FileInputStream("src/test/resources/WrongInput");
         assertThrows(NumberFormatException.class, ()->program.run(steam));
     }
+
+    @Test
+    public void testBiggerThenIntInput() throws FileNotFoundException {
+        Main program = new Main();
+        FileInputStream steam = new FileInputStream("src/test/resources/Int+1");
+        assertThrows(NumberFormatException.class, ()->program.run(steam));
+    }
 }
